@@ -1,0 +1,421 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'SolaimanLipi', Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+/* Header Section Styling */
+header {
+    background: linear-gradient(45deg, rgba(0, 77, 64, 0.26), rgba(0, 121, 107, 0.21)), 
+                url('gate.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+    text-align: center;
+    color: rgba(81, 203, 225, 0.79);
+}
+
+/* টাইটেল মডেলিং */
+.school-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2), 
+                 6px 6px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.school-title:hover {
+    transform: scale(1.05); /* মাউস নিলে লেখাটা একটু বড় হবে */
+    color: #80cbc4;
+}
+
+/* সাবটাইটেল বক্স */
+.subtitle-box {
+    display: inline-block;
+    border-top: 2px solid #80cbc4;
+    border-bottom: 2px solid #80cbc4;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+.school-subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.school-subtitle i {
+    margin-right: 10px;
+    color: #ffca28; /* আইকনের কালার সোনালী */
+}
+
+/* মোবাইল রেসপন্সিভনেস */
+@media (max-width: 768px) {
+    .school-title {
+        font-size: 2rem;
+    }
+    .school-subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* Sticky Navbar */
+nav {
+    background: #108773;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li { display: inline; margin: 0 15px; }
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+nav ul li a:hover { color: #80cbc4; }
+
+/* Section Cards */
+.card {
+    background: white;
+    padding: 30px;
+    margin: 25px 0;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+h3 {
+    color: #004d40;
+    margin-bottom: 20px;
+    border-left: 5px solid #004d40;
+    padding-left: 10px;
+}
+
+/* Notice Styling */
+.notice-item {
+    background: #e8f5e9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.date { font-weight: bold; color: #2e7d32; display: block; font-size: 0.9rem; }
+
+/* Teacher Grid */
+.teacher-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.teacher-card {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+
+/* Form Styling */
+.form-group { margin-bottom: 15px; }
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-top: 5px;
+}
+
+.btn {
+    background: #00796b;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.btn:hover { background: #004d40; transform: translateY(-2px); }
+
+/* Footer */
+footer {
+    background: #212121;
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+}
+
+/* Slider Styles */
+.slider-container {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 5px solid #00796b;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ছবি যেন ফেটে না যায় */
+}
+
+.caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+/* শিক্ষক কার্ডের হোভার ইফেক্ট */
+.teacher-card {
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+}
+.teacher-card:hover {
+    background-color: #e0f2f1;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* পপ-আপ (Modal) ব্যাকগ্রাউন্ড */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.8); 
+}
+
+/* পপ-আপ বক্সের ডিজাইন */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto; 
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%; 
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* বন্ধ করার বাটন (Close Button) */
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+}
+
+#modalDetails h2 { color: #00796b; margin-bottom: 10px; }
+.exp-text { color: #555; font-weight: bold; margin-bottom: 15px; }
+
+/* Teacher Grid & Card Updates */
+.teacher-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding-top: 20px;
+}
+
+.teacher-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teacher-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: #00796b;
+}
+
+/* Photo Styling */
+.teacher-photo-box {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 4px solid #f0f0f0;
+    transition: 0.3s;
+}
+
+.teacher-card:hover .teacher-photo-box {
+    border-color: #80cbc4;
+}
+
+.teacher-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ছবি যেন ফেটে বা চ্যাপ্টা না হয়ে যায় */
+}
+
+/* Text Styling in Card */
+.teacher-card h4 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.designation {
+    color: #00796b;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.view-profile {
+    font-size: 0.85rem;
+    color: #757575;
+    margin-top: auto; /* বাটনটিকে কার্ডের নিচে রাখবে */
+    transition: 0.3s;
+}
+
+.teacher-card:hover .view-profile {
+    color: #004d40;
+    font-weight: bold;
+}
+
+/* Modal Photo Styling */
+.modal-photo-box {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    border: 3px solid #00796b;
+}
+
+.modal-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-rank { color: #555; margin-top: 5px; }
+
+
+/* পপ-আপের ছবির কন্টেইনার */
+.modal-photo-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #00796b;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.modal-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-profile-header h2 {
+    color: #004d40;
+    margin-bottom: 5px;
+}
+
+.modal-rank {
+    color: #00796b;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.exp-badge {
+    background: #e0f2f1;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #00796b;
+    margin-bottom: 15px;
+}
+
+.bio-text {
+    text-align: justify;
+    line-height: 1.7;
+    color: #444;
+    padding: 0 10px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 15px 0;
+}

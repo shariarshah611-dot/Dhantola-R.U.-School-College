@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আমাদের আদর্শ উচ্চ বিদ্যালয় | ২০২৪ ব্যাচ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+    <div class="container">
+        <h1 class="school-title">Dhantola R. U. School & College</h1><hr />
+        
+    </div>
+    </header>
+
+    <nav id="navbar">
+        <ul>
+            <li><a href="#home">হোম</a></li>
+            <li><a href="#notice">নোটিশ</a></li>
+            <li><a href="#teachers">শিক্ষকবৃন্দ</a></li>
+            <li><a href="#contact">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+    <section class="slider-container">
+    <div class="slider">
+        <div class="slide active">
+            <img src="gate.jpg" alt="School Gate">
+            <div class="caption">আমাদের প্রিয় স্কুল প্রাঙ্গণ</div>
+        </div>
+        <div class="slide">
+            <img src="" alt="Sports">
+            <div class="caption">বার্ষিক ক্রীড়া প্রতিযোগিতা ২০২৪</div>
+        </div>
+        <div class="slide">
+            <img src="" alt="Lab">
+            <div class="caption">আমাদের আধুনিক কম্পিউটার ল্যাব</div>
+        </div>
+    </div>
+</section>
+
+    <div class="container">
+        <section id="home" class="card hero">
+            <h2>স্বাগতম আমাদের বিদ্যালয়ে</h2>
+            <p>আমাদের লক্ষ্য জ্ঞানার্জন ও চরিত্র গঠন। আধুনিক শিক্ষার সাথে তাল মিলিয়ে আমরা এগিয়ে চলছি আগামীর পথে।</p>
+            <button class="btn" onclick="scrollToSection('contact')">ভর্তি সংক্রান্ত যোগাযোগ</button>
+        </section>
+
+        <section id="notice" class="card">
+            <h3><i class="fas fa-bullhorn"></i> নোটিশ বোর্ড</h3>
+            <div class="notice-item">
+                <span class="date">১২ মার্চ, ২০২৬</span>
+                <p>২০২৪ সালের এসএসসি পরীক্ষার মূল সনদপত্র অফিস থেকে সংগ্রহ করা যাবে।</p>
+            </div>
+            <div class="notice-item">
+                <span class="date">১০ মার্চ, ২০২৬</span>
+                <p>আগামী সপ্তাহ থেকে বার্ষিক ক্রীড়া প্রতিযোগিতা শুরু হতে যাচ্ছে।</p>
+            </div>
+        </section>
+
+    <section id="teachers" class="card">
+    <h3><i class="fas fa-users"></i> আমাদের শিক্ষকবৃন্দ</h3>
+    <p class="section-subtitle">শিক্ষকের ছবির ওপর ক্লিক করে বিস্তারিত প্রোফাইল দেখুন।</p>
+    
+    <div class="teacher-grid">
+        <div class="teacher-card" onclick="openTeacherProfile('মোঃ আব্দুর রহমান', 'প্রধান শিক্ষক', '২০ বছর+', 'তিনি দীর্ঘ ২০ বছর ধরে অত্যন্ত নিষ্ঠার সাথে আমাদের বিদ্যালয় পরিচালনা করছেন। তিনি গণিত ও বিজ্ঞান বিষয়ে বিশেষজ্ঞ।', 'assets/images/teacher1.jpg')">
+            <div class="teacher-photo-box">
+                <img src="p2.jpg" alt="মোঃ আব্দুর রহমান" class="teacher-photo">
+            </div>
+            <h4>মোঃ সিহাব</h4>
+            <p class="designation">প্রধান শিক্ষক</p>
+            <p class="view-profile">প্রোফাইল দেখুন <i class="fas fa-arrow-right"></i></p>
+        </div>
+
+        <div class="teacher-card" onclick="openTeacherProfile('জান্নাতুল ফেরদৌস', 'সহকারী শিক্ষক (গণিত)', '৮ বছর+', 'তিনি উচ্চতর গণিত এবং জ্যামিতিতে বিশেষ পারদর্শী। শিক্ষার্থীদের কাছে তিনি অত্যন্ত প্রিয়।', 'assets/images/teacher2.jpg')">
+            <div class="teacher-photo-box">
+                <img src="" alt="জান্নাতুল ফেরদৌস" class="teacher-photo">
+            </div>
+            <h4>জান্নাতুল ফেরদৌস</h4>
+            <p class="designation">সহকারী শিক্ষক (গণিত)</p>
+            <p class="view-profile">প্রোফাইল দেখুন <i class="fas fa-arrow-right"></i></p>
+        </div>
+        
+        </div>
+</section>
+
+    <div id="teacherModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalDetails">
+            </div>
+        </div>
+    </div>
+
+        <section id="contact" class="card">
+            <h3><i class="fas fa-envelope"></i> যোগাযোগ করুন</h3>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label>আপনার নাম:</label>
+                    <input type="text" id="name" placeholder="নাম লিখুন" required>
+                </div>
+                <div class="form-group">
+                    <label>ইমেইল বা ফোন:</label>
+                    <input type="text" id="email" placeholder="যোগাযোগের ঠিকানা" required>
+                </div>
+                <div class="form-group">
+                    <label>আপনার বার্তা:</label>
+                    <textarea id="message" rows="4" placeholder="কিছু লিখুন..."></textarea>
+                </div>
+                <button type="submit" class="btn">বার্তা পাঠান</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; ২০২৬ আমাদের স্কুল। All Rights Reserved</p>
+        <p>ধনতোলা রংপর সদর,রংপুর, বাংলাদেশ</p><hr />
+        <h6>𝐖𝐄𝐁𝐒𝐈𝐓𝐄 𝐃𝐄𝐒𝐈𝐆𝐍𝐄𝐃 𝐁𝐘 𝐒𝐇𝐈𝐇𝐀𝐁</h6><hr />
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
